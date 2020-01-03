@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: web-svc
   labels:
-    app: web-svc
+    app: special-seminar-web
 spec:
   type: NodePort
   ports:
