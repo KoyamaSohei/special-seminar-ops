@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: web-svc
   labels:
-    app: fuga-api
+    app: web-svc
 spec:
   type: NodePort
   ports:
