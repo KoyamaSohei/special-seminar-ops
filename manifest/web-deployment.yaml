@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: special-seminar-web
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: special-seminar-web
+  template:
+    metadata:
+      labels:
+        app: special-seminar-web
+    spec:
+      containers:
+      - image: koyamaso/special-seminar-web:0.0.1
+        name: special-seminar-web
+        ports:
+        - containerPort: 8080
