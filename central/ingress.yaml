@@ -9,7 +9,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /foo
         backend:
           serviceName: web-svc
           servicePort: 80
