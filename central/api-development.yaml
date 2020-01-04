@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: special-seminar-api
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: special-seminar-api
+  template:
+    metadata:
+      labels:
+        app: special-seminar-api
+    spec:
+      containers:
+      - image: koyamaso/special-seminar-api:0.1.0
+        name: special-seminar-api
+        ports:
+        - containerPort: 50051
