@@ -3,13 +3,13 @@ kind: Ingress
 metadata:
   name: central-ingress
   annotations:
-    ingress.kubernetes.io/rewrite-target: /$2
+    ingress.kubernetes.io/rewrite-target: /
     kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
   - http:
       paths:
-      - path: /foo(/|$)(.*)
+      - path: /foo
         backend:
           serviceName: web-svc
           servicePort: 80
