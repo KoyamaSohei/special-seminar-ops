@@ -14,7 +14,7 @@ spec:
         app: special-seminar-web
     spec:
       containers:
-      - image: koyamaso/special-seminar-web:0.0.1
+      - image: koyamaso/special-seminar-web:0.0.2
         name: special-seminar-web
         ports:
         - containerPort: 8080
