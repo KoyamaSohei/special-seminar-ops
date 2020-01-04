@@ -8,8 +8,8 @@ metadata:
 spec:
   rules:
   - http:
-    paths:
-    - backend:
-        serviceName: web-svc
-        servicePort: 8080
-      path: /foo(/|$)(.*)
+      paths:
+      - backend:
+          serviceName: web-svc
+          servicePort: 8080
+        path: /foo(/|$)(.*)
