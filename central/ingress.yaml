@@ -12,6 +12,7 @@ spec:
       - backend:
           serviceName: web-svc
           servicePort: 8080
+        path: /()(.*)
       - backend:
           serviceName: api-svc
           servicePort: 50051
