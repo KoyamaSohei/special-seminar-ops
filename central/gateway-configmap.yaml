@@ -42,8 +42,16 @@ data:
                 typed_config: {}
       clusters:
         - name: web-svc
-          type: static
-          lb_type: round_robin
-          features: http2
-          hosts:
-            - url: tcp://127.0.0.1:8888
+          connect_timeout: 0.25s
+          type: strict_dns
+          lb_policy: round_robin
+          http2_protocol_options: {}
+          load_assignment:
+            cluster_name: web-svc.default.svc.cluster.local
+            endpoints:
+            - lb_endpoints:
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: 127.0.0.1
+                      port_value: 8888
