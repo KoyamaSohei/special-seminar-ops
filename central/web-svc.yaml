@@ -5,7 +5,7 @@ metadata:
 spec:
   clusterIP: None
   selector:
-    app: hoge-app
+    app: special-seminar-web
   ports:
     - port: 8888
       targetPort: 8888
