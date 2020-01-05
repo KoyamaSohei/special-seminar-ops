@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: special-seminar-gateway
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: special-seminar-gateway
+  template:
+    metadata:
+      labels:
+        app: special-seminar-gateway
+    spec:
+      volumes:
+        - name: envoy
+          configMap:
+            name: central-gateway-configmap
+      containers:
+      - image: envoyproxy/envoy:latest
+        name: envoy
+        command:
+          - "/usr/local/bin/envoy"
+        args:
+          - "--config-path /etc/envoy/envoy.yaml"
+        volumeMounts:
+          - name: envoy
+            mountPath: /etc/envoy
+        ports:
+          - containerPort: 8888
+        
