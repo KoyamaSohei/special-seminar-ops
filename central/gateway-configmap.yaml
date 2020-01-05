@@ -27,7 +27,7 @@ data:
                   - match:
                       prefix: "/"
                     route:
-                      cluster: web-svc.default.svc.cluster.local
+                      cluster: web-svc
                   cors:
                     allow_origin:
                     - "*"
@@ -40,3 +40,11 @@ data:
               - name: envoy.cors
               - name: envoy.router
                 typed_config: {}
+      clusters:
+        - name: web-svc
+          service_name: web-svc.default.svc.cluster.local
+          type: static
+          lb_type: round_robin
+          features: http2
+          hosts:
+            - url: tcp://127.0.0.1:8888
