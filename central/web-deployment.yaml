@@ -14,11 +14,11 @@ spec:
         app: special-seminar-web
     spec:
       volumes:
-        - name: envoy
+        - name: envoy-web
           configMap:
-            name: central-sidecar-configmap
+            name: web-sidecar-configmap
       containers:
-      - image: koyamaso/special-seminar-web:0.0.1
+      - image: koyamaso/special-seminar-web:0.0.6
         name: special-seminar-web
         ports:
         - containerPort: 8080
@@ -29,7 +29,7 @@ spec:
         args:
           - "--config-path /etc/envoy/envoy.yaml"
         volumeMounts:
-          - name: envoy
+          - name: envoy-web
             mountPath: /etc/envoy
         ports:
           - containerPort: 8888

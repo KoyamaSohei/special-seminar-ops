@@ -29,4 +29,4 @@ spec:
             mountPath: /etc/envoy
         ports:
           - containerPort: 80
-        
+          - containerPort: 8081
