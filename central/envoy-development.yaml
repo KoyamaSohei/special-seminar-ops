@@ -14,7 +14,7 @@ spec:
         app: special-seminar-gateway
     spec:
       volumes:
-        - name: envoy
+        - name: envoy-gateway
           configMap:
             name: central-gateway-configmap
       containers:
@@ -25,7 +25,7 @@ spec:
         args:
           - "--config-path /etc/envoy/envoy.yaml"
         volumeMounts:
-          - name: envoy
+          - name: envoy-gateway
             mountPath: /etc/envoy
         ports:
           - containerPort: 80
