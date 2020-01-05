@@ -42,7 +42,6 @@ data:
                 typed_config: {}
       clusters:
         - name: web-svc
-          service_name: web-svc.default.svc.cluster.local
           type: static
           lb_type: round_robin
           features: http2
