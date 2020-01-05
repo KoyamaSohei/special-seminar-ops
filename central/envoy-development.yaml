@@ -28,5 +28,5 @@ spec:
           - name: envoy
             mountPath: /etc/envoy
         ports:
-          - containerPort: 8888
+          - containerPort: 80
         
