@@ -13,10 +13,6 @@ spec:
       labels:
         app: special-seminar-api
     spec:
-      volumes:
-        - name: envoy-api
-          configMap:
-            name: api-sidecar-configmap
       containers:
       - image: koyamaso/special-seminar-api:0.1.4
         name: special-seminar-api
