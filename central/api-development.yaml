@@ -14,7 +14,24 @@ spec:
         app: special-seminar-api
     spec:
       containers:
-      - image: koyamaso/special-seminar-api:0.1.4
+      - image: koyamaso/special-seminar-api:0.1.7
         name: special-seminar-api
         ports:
         - containerPort: 50051
+        env:
+        - name: SOA_MNAME
+          value: beta.spesemi2019.work
+        - name: SOA_RNAME
+          value: mail.spesemi2019.work 
+        - name: GPGSQL_HOST
+          value: "10.62.128.3"
+        - name: GPGSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-auth
+              key: username
+        - name: GPGSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-auth
+              key: password
