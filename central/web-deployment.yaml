@@ -18,7 +18,7 @@ spec:
           configMap:
             name: web-sidecar-configmap
       containers:
-      - image: koyamaso/special-seminar-web:0.0.6
+      - image: koyamaso/special-seminar-web:0.1.1
         name: special-seminar-web
         ports:
         - containerPort: 8080
