@@ -36,7 +36,7 @@ spec:
           - name: envoy-gateway
             mountPath: /etc/envoy
           - name: tls-cert 
-            mountPath: /etc
+            mountPath: /etc/cert
         ports:
           - containerPort: 80
           - containerPort: 8081
