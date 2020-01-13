@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdns
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: pdns
+  template:
+    metadata:
+      labels:
+        app: pdns
+    spec:
+      containers:
+      - image: koyamaso/pdns:latest
+        name: pdns
+        ports:
+        - containerPort: 53
+        env:
+        - name: GPGSQL_HOST
+          value: "10.62.128.3"
+        - name: GPGSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: db-auth
+              key: username
+        - name: GPGSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: db-auth
+              key: password
