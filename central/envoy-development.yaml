@@ -17,6 +17,14 @@ spec:
         - name: envoy-gateway
           configMap:
             name: central-gateway-configmap
+        - name: tls-cert 
+          secret:
+            secretName: tls-central 
+            items:
+            - key: tls.crt
+              path: beta-spesemi2019.crt
+            - key: tls.key 
+              path: beta-spesemi2019.key
       containers:
       - image: envoyproxy/envoy:latest
         name: envoy
@@ -27,6 +35,8 @@ spec:
         volumeMounts:
           - name: envoy-gateway
             mountPath: /etc/envoy
+          - name: tls-cert 
+            mountPath: /etc/cert
         ports:
           - containerPort: 80
           - containerPort: 8081
