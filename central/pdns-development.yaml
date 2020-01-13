@@ -21,6 +21,8 @@ spec:
         env:
         - name: GPGSQL_HOST
           value: "10.62.128.3"
+        - name: GPGSQL_DBNAME
+          value: postgres
         - name: GPGSQL_USER
           valueFrom:
             secretKeyRef:
