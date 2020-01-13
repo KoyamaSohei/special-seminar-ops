@@ -71,13 +71,13 @@ data:
               - name: envoy.file_access_log
                 config:
                   path: "/dev/stdout"
-        tls_context:
-          common_tls_context:
-            tls_certificates:
-              - certificate_chain:
-                  filename: "/etc/cert/beta-spesemi2019.crt"
-                private_key:
-                  filename: "/etc/cert/beta-spesemi2019.key"
+          tls_context:
+            common_tls_context:
+              tls_certificates:
+                - certificate_chain:
+                    filename: "/etc/cert/beta-spesemi2019.crt"
+                  private_key:
+                    filename: "/etc/cert/beta-spesemi2019.key"
       clusters:
         - name: web-svc
           connect_timeout: 0.25s
