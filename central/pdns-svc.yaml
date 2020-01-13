@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: pdns-svc
 spec:
-  clusterIP: None
+  type: ClusterIP
   selector:
     app: pdns
   ports:
