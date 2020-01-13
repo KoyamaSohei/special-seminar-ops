@@ -14,7 +14,7 @@ spec:
         app: special-seminar-surrogate
     spec:
       containers:
-      - image: koyamaso/special-seminar-surrogate:0.1.0
+      - image: koyamaso/special-seminar-surrogate:0.1.1
         name: special-seminar-surrogate
         env:
         - name: REDIS_HOST
