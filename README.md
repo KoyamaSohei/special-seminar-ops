@@ -8,7 +8,7 @@
 
 Cloudflareの(稚拙な)サブセット
 
-![デモ](https://user-images.githubusercontent.com/17472875/71737493-28f05580-2e97-11ea-99f8-882fc8b0366f.gif)
+![デモ](https://user-images.githubusercontent.com/17472875/72378902-a9e00480-3755-11ea-9def-981172433522.gif)
 
 
 HTTPヘッダに`Surrogate-Control: max-age=(time in seconds)`を追加することでキャッシュ制御出来る
