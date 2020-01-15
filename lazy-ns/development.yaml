@@ -14,11 +14,13 @@ spec:
         app: special-seminar-lazy-ns
     spec:
       containers:
-      - image: koyamaso/special-seminar-lazy-ns:1.0.0
+      - image: koyamaso/special-seminar-lazy-ns:1.0.1
         name: special-seminar-lazy-ns
         env:
         - name: TARGET_IP
           value: "34.66.73.185"
+        - name: DNS_SERVER
+          value: "pdns-svc.default.svc.cluster.local"
         ports:
         - containerPort: 53
           protocol: UDP
