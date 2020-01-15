@@ -14,7 +14,7 @@ spec:
         app: special-seminar-api
     spec:
       containers:
-      - image: koyamaso/special-seminar-api:0.1.7
+      - image: koyamaso/special-seminar-api:0.1.8
         name: special-seminar-api
         ports:
         - containerPort: 50051
