@@ -12,3 +12,13 @@ Cloudflareの(稚拙な)サブセット
 
 
 HTTPヘッダに`Surrogate-Control: max-age=(time in seconds)`を追加することでキャッシュ制御出来る
+
+## ソースコード
+
+[special-seminar-surrogate](https://github.com/KoyamaSohei/special-seminar-surrogate)
+
+[special-seminar-lazy-ns](https://github.com/KoyamaSohei/special-seminar-lazy-ns)
+
+[special-seminar-api](https://github.com/KoyamaSohei/special-seminar-api)
+
+[special-seminar-web](https://github.com/KoyamaSohei/special-seminar-web)
